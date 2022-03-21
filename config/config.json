@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "090303-19",
-    "password": "090303-19",
-    "database": "090303-19-dpe",
-    "host": "51.250.126.17",
+    "username": "090303-19_DEP",
+    "password": "090303",
+    "database": "090303-19_DEP",
+    "host": "84.201.184.150",
     "dialect": "mysql"
   },
   "test": {
