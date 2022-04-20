@@ -29,138 +29,123 @@
     </div>
 
 
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="tab">
-                <button class="tablinks active" onclick="openTab(event, 'Eastern')">Eastern</button>
-                <button class="tablinks blocked" onclick="openTab(event, 'Western')">Western</button>
-            </div>
+    <style>
+        .tabs {
+            font-size: 0;
+        }
 
-            <div id="Eastern" class="tabcontent">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitррвпрr</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="Western" class="tabcontent">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@tw</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+        .tabs>input[type="radio"] {
+            display: none;
+        }
+
+        .tabs>div {
+            /* скрыть контент по умолчанию */
+            display: none;
+            border: 1px solid #e0e0e0;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+        #tab-btn-1:checked~#content-1,
+        #tab-btn-2:checked~#content-2,
+        #tab-btn-3:checked~#content-3 {
+            display: block;
+        }
+
+        .tabs>label {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 2px 8px;
+            font-size: 16px;
+            line-height: 1.5;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            top: 1px;
+        }
+
+        .tabs>label:not(:first-of-type) {
+            border-left: none;
+        }
+
+        .tabs>input[type="radio"]:checked+label {
+            background-color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+
+    <div class="tabs">
+        <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+        <label for="tab-btn-1">Western</label>
+        <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+        <label for="tab-btn-2">Eastern</label>
+
+        <div id="content-1">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="content-2">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Главная</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Профиль</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Контакт</button>
-        </li>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Главная</div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Профиль</div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Контакт</div>
-    </div>
-
-    <script>
-        var triggerTabList = [].slice.call(document.querySelectorAll('#pills-home a'))
-        triggerTabList.forEach(function (triggerEl) {
-            var tabTrigger = new bootstrap.Tab(triggerEl)
-
-            triggerEl.addEventListener('click', function (event) {
-                event.preventDefault()
-                tabTrigger.show()
-            })
-        })
-    </script>
-
-    <script>
-        var someTabTriggerEl = document.querySelector('#pills-home')
-        var tab = new bootstrap.Tab(someTabTriggerEl)
-
-        tab.show()
-    </script>
-
-    <script>
-        var triggerTabList = [].slice.call(document.querySelectorAll('#pills-profile a'))
-        triggerTabList.forEach(function (triggerEl) {
-            var tabTrigger = new bootstrap.Tab(triggerEl)
-
-            triggerEl.addEventListener('click', function (event) {
-                event.preventDefault()
-                tabTrigger.show()
-            })
-        })
-    </script>
-
-    <script>
-        var triggerTabList = [].slice.call(document.querySelectorAll('#pills-contact a'))
-        triggerTabList.forEach(function (triggerEl) {
-            var tabTrigger = new bootstrap.Tab(triggerEl)
-
-            triggerEl.addEventListener('click', function (event) {
-                event.preventDefault()
-                tabTrigger.show()
-            })
-        })
-    </script>
 
 </main>
 
